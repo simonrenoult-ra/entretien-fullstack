@@ -1,0 +1,27 @@
+<h2>Catalogue des données carbone</h2>
+<h3>En France métropolitaine, d'après la
+  <a href="https://data.ademe.fr/datasets/base-carboner">Base Carbone v23.0</a>,
+  dernière mise à jour le 15 juin 2023</h3>
+<h4>{{items.length}}
+  enregistrements disponibles après nettoyage des données</h4>
+<section>
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Impact</th>
+      <th>Unité</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each items}}
+      <tr>
+        <td>{{name}}
+          {{#if sousLocalisation}}({{sousLocalisation}}){{/if}}</td>
+        <td>{{impact}}</td>
+        <td>{{unit}}</td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,92 @@
+<html lang='fr'>
+<head>
+  <meta charset='utf-8' />
+  <title>🐢 Tortue</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <style>
+    body {
+      overflow: hidden;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .wrapper {
+      display: flex;
+      height: 100%;
+    }
+
+    aside {
+      flex-shrink: 0;
+      flex-basis: 15%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    aside > h1 {
+      text-align: center;
+    }
+
+    aside > footer {
+      text-align: center;
+    }
+
+    main {
+      overflow-y: auto;
+
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <aside>
+    <h1>Compagnon écologique</h1>
+    <nav>
+      {{> nav}}
+    </nav>
+
+    <footer>
+      {{> footer}}
+    </footer>
+  </aside>
+
+  <main>
+    {{{body}}}
+  </main>
+</div>
+
+<script
+  src='https://unpkg.com/htmx.org@1.9.3'
+  integrity='sha384-lVb3Rd/Ca0AxaoZg5sACe8FJKF0tnUgR2Kd7ehUOG5GCcROv5uBIZsOqovBAcWua'
+  crossorigin='anonymous'
+></script>
+
+<script src="https://cdn.jsdelivr.net/npm/ulid@2.3.0/dist/index.umd.min.js"></script>
+
+<script>
+  window.onload = function(ev) {
+    initializeCorrelationIdIfMissing();
+  };
+
+  document.body.addEventListener("htmx:configRequest", function(evt) {
+    const correlationId = window.localStorage.getItem("correlationId");
+    console.log("sending", correlationId);
+    evt.detail.headers["X-Correlation-Id"] = correlationId;
+  });
+
+  function initializeCorrelationIdIfMissing() {
+    const key = "correlationId";
+    const correlationId = window.localStorage.getItem(key);
+    if (!correlationId) {
+      const newCorrelationId = window.ULID.ulid();
+      window.localStorage.setItem(key, newCorrelationId);
+    }
+  }
+</script>
+</body>
+</html>

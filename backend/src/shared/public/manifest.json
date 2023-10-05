@@ -1,0 +1,16 @@
+{
+  "name": "Tortue Companion WebApp",
+  "short_name": "Tortue Companion WebApp",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "An ecological companion",
+  "icons": [
+    {
+      "src": "turtle.jpg",
+      "sizes": "600x600",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": []
+}

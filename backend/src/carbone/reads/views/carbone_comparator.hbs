@@ -1,0 +1,34 @@
+<h2>Comparateur de données carbone</h2>
+<form hx-post="/compare" hx-target="#result">
+  <label for="elementToCompareA">
+    Élément A
+    <input
+      name="elementToCompareA"
+      type="text"
+      list="catalogue"
+      id="elementToCompareA"
+      width="120"
+    />
+  </label>
+
+  <label for="elementToCompareB">
+    Élément B
+    <input
+      name="elementToCompareB"
+      type="text"
+      list="catalogue"
+      id="elementToCompareB"
+      width="120"
+    />
+  </label>
+
+  <button type="submit">Comparer</button>
+</form>
+
+<div id="result"></div>
+
+<datalist id="catalogue">
+  {{#each items}}
+    <option value="{{name}}"></option>
+  {{/each}}
+</datalist>
