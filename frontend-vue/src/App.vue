@@ -1,5 +1,7 @@
 <script setup>
 
+import HelloWorld from "./components/HelloWorld.vue";
+
 async function logCarboneFootprints() {
   const url = "http://localhost:1337/carbone-footprints";
   const response = await fetch(url);
@@ -13,11 +15,11 @@ logCarboneFootprints()
 
 <template>
   <header>
-    Hello world
+    <HelloWorld name="Michelle" />
   </header>
 
   <main>
-    Main content
+    Shall we start?
   </main>
 </template>
 
