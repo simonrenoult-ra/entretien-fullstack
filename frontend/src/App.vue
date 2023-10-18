@@ -1,6 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 
 async function logCarboneFootprints() {
   const url = "http://localhost:1337/carbone-footprints";

@@ -1,7 +1,7 @@
-import {Controller, Get, Inject, Res,} from "@nestjs/common";
-import {Response} from "express";
+import { Controller, Get, Inject, Res } from "@nestjs/common";
+import { Response } from "express";
 
-import {CarboneRepository} from "../shared/carbone.repository";
+import { CarboneRepository } from "../shared/carbone.repository";
 
 @Controller()
 export class CarboneController {
