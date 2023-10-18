@@ -1,4 +1,4 @@
-# Tortue
+# 🐢 Tortue
 
 Tortue est une application permettant de mieux comprendre son impact carbone individuel.
 
