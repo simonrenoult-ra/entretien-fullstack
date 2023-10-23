@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import {InputSearch} from "./components/InputSearch";
 
-test('says welcome to the candidate', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Michelle/i);
-  expect(linkElement).toBeInTheDocument();
+test('je récupère la valeur du filtre', () => {
+  render(<InputSearch />);
+  const form = screen.getByText(/form/)
+  expect(form).toBeInTheDocument();
 });
