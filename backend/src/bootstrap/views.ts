@@ -3,8 +3,6 @@ import * as path from "node:path";
 import { NestExpressApplication } from "@nestjs/platform-express";
 import { create } from "express-handlebars";
 
-import { example } from "../carbone/reads/handlebars-helpers";
-
 export function configureViews(app: NestExpressApplication) {
   app.useStaticAssets(path.join(__dirname, "../shared/public"));
   app.setBaseViewsDir([
@@ -18,7 +16,6 @@ export function configureViews(app: NestExpressApplication) {
     defaultLayout: "layout_main",
     layoutsDir: path.join(__dirname, "../shared/views", "layouts"),
     partialsDir: path.join(__dirname, "../shared/views", "partials"),
-    helpers: { example },
   });
 
   app.engine("hbs", hbs.engine);
