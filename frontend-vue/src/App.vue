@@ -1,21 +1,14 @@
 <script setup>
 
 import HelloWorld from "./components/HelloWorld.vue";
-
-async function logCarboneFootprints() {
-  const url = "http://localhost:1337/carbone-footprints";
-  const response = await fetch(url);
-  const carboneFootprints = await response.json();
-  console.log(carboneFootprints);
-}
-
-logCarboneFootprints()
+import CarbonFootprints from "./data.json"
+console.log(CarbonFootprints)
 
 </script>
 
 <template>
   <header>
-    <HelloWorld name="Michelle" />
+    <HelloWorld name="Ronny" />
   </header>
 
   <main>
